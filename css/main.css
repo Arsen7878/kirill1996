@@ -5,11 +5,19 @@
   line-height: 1.14;
 }
 
+@media (max-width: 480px) {
+  .body {
+    font-size: 12px;
+  }
+}
+
 .container {
   margin: 0 auto;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   width: 500px;
 }
 
@@ -43,7 +51,15 @@
 }
 
 .pay {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 0 auto;
   width: 300px;
   cursor: pointer;
@@ -55,14 +71,19 @@
   margin-bottom: 15px;
 }
 
-@media (mqx-width: 480px) {
+@media (max-width: 480px) {
   .pay {
-    width: 200px;
+    width: 220px;
   }
 }
 
 .link {
   display: block;
   text-align: center;
+}
+
+.img {
+  display: block;
+  margin-right: 10px;
 }
 /*# sourceMappingURL=main.css.map */

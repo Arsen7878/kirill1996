@@ -3,7 +3,9 @@
 }
 
 .pay {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   width: 300px;
   cursor: pointer;
@@ -14,12 +16,17 @@
   color: white;
 
   margin-bottom: 15px;
-  @media (mqx-width: 480px) {
-    width: 200px;
+  @media (max-width: 480px) {
+    width: 220px;
   }
 }
 
 .link {
   display: block;
   text-align: center;
+}
+
+.img {
+  display: block;
+  margin-right: 10px;
 }
