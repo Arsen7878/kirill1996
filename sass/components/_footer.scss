@@ -1,0 +1,26 @@
+.footer {
+  border-top: 2px solid #cccccc;
+}
+
+.pay {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: OpenSans, sans-serif;
+  padding: 7px 20px;
+  background-color: rgb(122, 183, 43);
+  color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-bottom: 15px;
+  @media (mqx-width: 480px) {
+    width: 200px;
+  }
+}
+
+.link {
+  display: block;
+  text-align: center;
+}
