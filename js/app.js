@@ -1,3 +1,14 @@
+// 252122F310
+
+const isReturnCartRef = (config) => {
+  galleryRef.insertAdjacentHTML(
+    'beforeend',
+    `<div class = "card"><div class = "image__box"><img class="image" src= ${config.img} alt =${config.name}></div> <div class= "data"><h2 class="title">${config.article}</h2><h2 class="text__manufacture">${config.manufacture}</h2> <p class="text__name">${config.name}</p> </div></div>`
+  );
+  console.log(galleryRef);
+
+  return galleryRef;
+};
 const mainFunction = (artFind) => {
   const request = new XMLHttpRequest();
 
@@ -7,7 +18,6 @@ const mainFunction = (artFind) => {
   );
 
   request.responseType = 'json';
-  console.log(request);
 
   request.onload = function () {
     request.response.data.map((elem) => {
@@ -20,15 +30,19 @@ const mainFunction = (artFind) => {
         article = articleNumber;
         manufacture = mfrName;
         name = genericArticles[0].genericArticleDescription;
-        img = isImages(array, images);
-        console.log(article);
+        img = isImages(images);
+        const config = { article, manufacture, name, img };
+        console.log(config);
+        isReturnCartRef(config);
+
         // вызов функции вывода в таблицу
       });
     });
   };
-  const isImages = (array, images) => {
+  const isImages = (images) => {
     let img = '';
-    if (array.length === 0) {
+
+    if (images.length === 0) {
       img = 'https://autodoka-srv.com/web/nofoto.png';
     } else {
       images.map((image) => {
@@ -43,15 +57,15 @@ const mainFunction = (artFind) => {
   };
   request.send();
 };
-// 252122F310
 
 const configRef = {
   inputRef: document.querySelector('.input'),
   btnFindRef: document.querySelector('[data-action = "find"]'),
+  galleryRef: document.querySelector('#gallery'),
 };
 
-const { inputRef, btnFindRef } = configRef;
-
+const { inputRef, btnFindRef, galleryRef } = configRef;
+// inputRef.value = '252122F310';
 const inputValueRef = () => {
   if (inputRef.value === '') {
     alert('Артикул не должен быть пустой');
