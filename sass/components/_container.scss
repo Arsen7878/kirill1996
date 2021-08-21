@@ -1,16 +1,4 @@
 .container {
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @media (max-width: 480px) {
-    width: 100vw;
-  }
-  width: 500px;
-}
-
-.text-accent {
-  color: rgb(142, 68, 173);
+  margin-left: auto;
+  margin-right: auto;
 }
