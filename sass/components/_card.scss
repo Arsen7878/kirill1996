@@ -3,6 +3,7 @@ button {
   justify-content: center;
   align-items: center;
   margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
   background-color: #f76857;
   color: white;
@@ -50,9 +51,10 @@ button {
     padding-left: 20px;
   }
   @media (min-width: 320px) {
-    width: 150px;
+    width: 100%;
     height: 40px;
     font-size: 15px;
+    margin-left: 20px;
   }
   @media (min-width: 1200px) {
     width: 500px;
