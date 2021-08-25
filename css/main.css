@@ -148,6 +148,20 @@ button:hover, button:focus {
           transform: scale(1.15);
 }
 
+@media (max-width: 479px) {
+  .card {
+    min-width: 90vw;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 1199px) {
+  .card {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    min-width: 50vw;
+  }
+}
+
 .data {
   text-align: center;
 }
