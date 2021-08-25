@@ -5,8 +5,6 @@ const isReturnCartRef = (config) => {
     'beforeend',
     `<div class = "card"><div class = "image__box"><img class="image" src= ${config.img} alt =${config.name}></div> <div class= "data"><h2 class="title">${config.article}</h2><h2 class="text__manufacture">${config.manufacture}</h2> <p class="text__name">${config.name}</p> </div></div>`
   );
-  console.log(galleryRef);
-
   return galleryRef;
 };
 const mainFunction = (artFind) => {
@@ -32,7 +30,7 @@ const mainFunction = (artFind) => {
         name = genericArticles[0].genericArticleDescription;
         img = isImages(images);
         const config = { article, manufacture, name, img };
-        console.log(config);
+        // console.log(config);
         isReturnCartRef(config);
 
         // вызов функции вывода в таблицу
@@ -46,11 +44,9 @@ const mainFunction = (artFind) => {
       img = 'https://autodoka-srv.com/web/nofoto.png';
     } else {
       images.map((image) => {
-        if (image.hasOwnProperty('imageURL800')) {
-          img = image.imageURL800;
-        } else {
-          img = 'https://autodoka-srv.com/web/nofoto.png';
-        }
+        image.hasOwnProperty('imageURL800')
+          ? (img = image.imageURL800)
+          : (img = 'https://autodoka-srv.com/web/nofoto.png');
       });
     }
     return img;
@@ -65,12 +61,12 @@ const configRef = {
 };
 
 const { inputRef, btnFindRef, galleryRef } = configRef;
-// inputRef.value = '252122F310';
+inputRef.value = '252122F310';
 const inputValueRef = () => {
-  if (inputRef.value === '') {
-    alert('Артикул не должен быть пустой');
-  } else {
-    mainFunction(inputRef.value);
-  }
+  inputRef.value === ''
+    ? alert('Артикул не должен быть пустой')
+    : mainFunction(inputRef.value);
 };
+
 btnFindRef.addEventListener('click', inputValueRef);
+console.log('object');
